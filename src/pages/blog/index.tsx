@@ -1,3 +1,5 @@
+import Layout from "@/components/template/layout"
+import Link from "next/link"
 import { Post } from "types/posts"
 
 type Props = {
@@ -7,18 +9,18 @@ type Props = {
 const Blog = ({ posts }: Props) => {
 
     return (
-        <div >
+        <Layout>
             <h1>Blog</h1>
             <ul style={{ listStyle: 'none' }}>
                 {posts?.map((post) => (
                     <li key={post.id} style={{ color: 'red', fontSize: '20px', paddingBottom: '5px' }}>
-                        <a href={`/blog/${post.id}`} target="_blank" rel="noreferrer">
+                        <Link href={`/blog/${post.id}`}  rel="noreferrer">
                             {post.title}
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
-        </div>
+        </Layout>
     )
 }
 

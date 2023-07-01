@@ -1,20 +1,29 @@
 import { GetServerSideProps } from 'next';
+import Link from 'next/link';
 import React from 'react';
 import { Todo } from 'types/Todo';
+import 'bootstrap/dist/css/bootstrap.css'
+/* import Script from 'next/script'; */
+
 
 type TodoProps = {
     todo: Todo[]
 }
 const Todo = ({ todo }: TodoProps) => {
     return (<div>
-        <h1>Lista de tarefas</h1>
+        <h1>Lista de tarefas do {process.env.NEXT_PUBLIC_NOME}</h1>
         <ul>
             {todo?.map((item, index: number) => {
                 return (<li key={index}>
-                    <a href="#">{item.title} - {item.completed.toString()}</a>
+                    <Link scroll={false} href="/sobre/pedro">{item.title} - {item.completed.toString()}</Link>
                 </li>)
             })}
         </ul>
+
+           {/* <Script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" strategy='beforeInteractive' onLoad={() => {}}/>*/}
+           {/* <Script id="codeLoadAlert" strategy='afterInteractive'>
+            {`window.alert('carreguei')`}
+           </Script> */}
     </div>);
 }
 

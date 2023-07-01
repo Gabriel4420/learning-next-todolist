@@ -1,3 +1,4 @@
+import Layout from "@/components/template/layout"
 import { GetStaticProps } from "next"
 import { ParsedUrlQuery } from "querystring"
 import { Post } from "types/posts"
@@ -8,11 +9,11 @@ type Props = {
 
 const BlogItem = ({post}:Props) => {
     return (
-        <div>
+        <Layout>
             <h1>Blog</h1>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
-        </div>
+        </Layout>
     )
 }
 
