@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.linkItem {
+    padding:0 15px;
+    font-size: 30px;
+}
+
+.linkItem a {
+    color: #333;
+    text-decoration: none;
+}
+
+.linkItem a:hover {
+    text-decoration: underline;
+}
